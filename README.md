@@ -1,12 +1,14 @@
 # Transcript Seeker
 
+<p align="center"><a href="https://discord.com/invite/dsvFgDTr6c"><img height="60px" src="https://user-images.githubusercontent.com/31022056/158916278-4504b838-7ecb-4ab9-a900-7dc002aade78.png" alt="Join our Discord!"></a></p>
+
 ![Header](./.github/images/transcript-seeker.png)
 
 ## Overview
 
 **Transcript Seeker** is an open-source transcription playground powered by transcription APIs and meeting bot technology. With this app, you can easily upload and store recordings, transcribe them, chat with transcripts, generate notes, and more—all directly in your browser.
 
-### Key Features 
+### Key Features
 
 - **Upload and Transcribe**: Upload video or audio recordings, generate transcripts seamlessly using Gladia and AssemblyAI, and sync them with your recordings.
 - **Interactive Transcripts**: Experience live transcript seeking where the transcript scrolls in sync with video playback—click on a word to jump directly to that point in the recording.
@@ -65,27 +67,32 @@
 ---
 
 ## Quick Start
+
 This project utilizes Turborepo for managing and building multiple packages efficiently. Turborepo allows you to run build commands and scripts concurrently, making the development process fast and streamlined.
 
 1. **Clone the Repo**:
+
    ```sh
    npx create-turbo@latest -e https://github.com/Meeting-Baas/transcript-seeker
    ```
 
 2. **Set Up Environment Variables**:
+
    ```sh
    cp .env.example .env.development.local
    export NODE_ENV=development
    ```
 
-    To learn more about configuring the environment variables, follow this [guide](https://transcriptseeker.com/docs/concepts/environment-variables).
+   To learn more about configuring the environment variables, follow this [guide](https://transcriptseeker.com/docs/concepts/environment-variables).
 
 3. **Run the App**:
+
    ```sh
    pnpm turbo run dev
    ```
 
    > **Note**: If `pnpm turbo run dev` isn't working, try this instead:
+
    ```sh
    npm install turbo --global
    turbo dev
@@ -102,6 +109,7 @@ We welcome contributions from everyone! To get started:
 We value contributions of all kinds, whether it's fixing bugs, adding features, improving documentation, or providing feedback.
 
 ## Documentation
+
 If you'd like to see more information about Transcript Seeker, visit [docs.transcriptseeker.com](https://docs.transcriptseeker.com)
 
 ## License
@@ -116,7 +124,7 @@ If you need help, feel free to open an issue or join our [Discord community](htt
 
 ## Acknowledgements
 
-- **[Meeting Baas API](https://meetingbaas.com/)** -  Meeting bot and transcription API provider.
+- **[Meeting Baas API](https://meetingbaas.com/)** - Meeting bot and transcription API provider.
 - **[SWR](https://swr.vercel.app/)** - A React Hooks library for efficient remote data fetching.
 - **[Turborepo](https://turborepo.org/)** - Used for managing and building multiple packages efficiently.
 - **[Vidstack](https://www.vidstack.io/)** - UI components and hooks for building media players.
@@ -126,4 +134,3 @@ If you need help, feel free to open an issue or join our [Discord community](htt
 ---
 
 Thanks for checking out Transcript Seeker! Contributions, feedback, and suggestions are always appreciated.
-
