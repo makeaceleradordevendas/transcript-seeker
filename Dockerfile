@@ -18,17 +18,13 @@ FROM node:20-slim AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
-# Copia apenas os artefatos necessários do build
-COPY --from=builder /app/apps/web/dist ./dist
+# Copia todos os arquivos necessários para o ambiente de produção
+COPY --from=builder /app ./
 
-# Copia arquivos essenciais para rodar a aplicação
-COPY package.json pnpm-lock.yaml ./
-
-# Instala apenas as dependências de produção
+# Instala apenas dependências de produção com pnpm
 RUN corepack enable \
   && corepack prepare pnpm@latest --activate \
   && pnpm install --prod
 
-# Define o comando de start, se necessário
-# Exemplo:
+# Define o comando de execução, se necessário
 # CMD ["pnpm", "start"]
