@@ -33,7 +33,7 @@
     "fumadocs-ui": "14.2.0",
     "hast": "^1.0.0",
     "hast-util-to-jsx-runtime": "^2.3.2",
-    "next": "15.0.1",
+    "next": "15.0.2",
     "next-validate-link": "^1.1.0",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
