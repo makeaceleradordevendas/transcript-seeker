@@ -6,7 +6,7 @@ COPY . .
 RUN corepack enable \
  && corepack prepare pnpm@latest --activate \
  && pnpm install --no-frozen-lockfile \
- && pnpm run build
+ && turbo run build --filter=!@meeting-baas/docs
 
 # ---------- Fase 2: runtime --------
 FROM node:20-slim
