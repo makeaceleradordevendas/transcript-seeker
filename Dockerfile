@@ -6,7 +6,7 @@ COPY . .
 RUN corepack enable \
  && corepack prepare pnpm@latest --activate \
  && pnpm install --frozen-lockfile \
- && pnpm run build                # usa o script "build": "turbo run build"
+ && pnpm run build
 
 # ---------- Fase 2: runtime --------
 FROM node:20-slim
@@ -18,5 +18,5 @@ COPY package.json pnpm-lock.yaml ./
 RUN corepack enable \
  && corepack prepare pnpm@latest --activate \
  && pnpm install --prod --frozen-lockfile
-EXPOSE 3000                   # porta **interna** do app
+EXPOSE 3000
 CMD ["node", ".output/server/index.mjs"]
