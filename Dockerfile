@@ -3,10 +3,15 @@ FROM node:20-slim AS builder
 WORKDIR /app
 COPY . .
 # PNPM já vem no Node 20 via Corepack
-RUN corepack enable \
- && corepack prepare pnpm@latest --activate \
- && pnpm install --frozen-lockfile \
+RUN pnpm install --frozen-lockfile \
+    --ignore-workspace-root-check \
+    --strict-peer-dependencies=false \
  && pnpm run build
+
+# RUN corepack enable \
+ # && corepack prepare pnpm@latest --activate \
+ # && pnpm install --frozen-lockfile \
+ # && pnpm run build
 
 # ---------- Fase 2: runtime --------
 FROM node:20-slim
