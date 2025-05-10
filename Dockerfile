@@ -5,7 +5,7 @@ COPY . .
 # PNPM já vem no Node 20 via Corepack
 RUN corepack enable \
  && corepack prepare pnpm@latest --activate \
- && pnpm install --frozen-lockfile \
+ && pnpm install --no-frozen-lockfile \
  && pnpm run build
 
 # ---------- Fase 2: runtime --------
